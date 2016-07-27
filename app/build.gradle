@@ -7,9 +7,10 @@ android {
     defaultConfig {
         applicationId "com.example.abc.qbsample"
         minSdkVersion 15
-        targetSdkVersion 2
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -36,9 +37,9 @@ dependencies {
     compile project(':kerningview')
     compile project(':emoji_library')
     compile project(':fab_library')
-    compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.google.android.gms:play-services-gcm:9.2.1'
     compile 'com.squareup.picasso:picasso:2.3.2'
-    compile 'com.android.support:design:24.0.0'
+    compile supportDependencies.appCompat
+    compile supportDependencies.design
 }

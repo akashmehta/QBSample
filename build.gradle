@@ -12,12 +12,12 @@ buildscript {
     }
 }
 
+apply from: 'dependencies.gradle'
 allprojects {
     repositories {
         jcenter()
     }
 }
-
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
