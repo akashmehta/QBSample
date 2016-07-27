@@ -1,4 +1,4 @@
-package com.example.abc.qbsample.CoreFragments;
+package com.example.abc.qbsample.CoreActivity;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -8,12 +8,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -21,9 +17,9 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.abc.qbsample.Adapters.AllContactListAdapter;
-import com.example.abc.qbsample.CoreActivity.ContactListActivity;
 import com.example.abc.qbsample.Listeners.INetworkListener;
 import com.example.abc.qbsample.R;
 import com.example.abc.qbsample.Utils.Helper;
@@ -51,15 +47,14 @@ import org.jivesoftware.smack.XMPPException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/**
- * Created by abc on 5/13/2016.
- */
-public class AllContactListFragment extends Fragment implements INetworkListener{
+public class SearchNewUserActivity extends BaseActivity implements INetworkListener {
+
+    private QBUser currentUser;
     ListView contactList;
     AllContactListAdapter adapter;
     ProgressBar center_loader;
     ArrayList<QBUser> user_list = new ArrayList();
-    ContactListActivity activity;
+
     TextView err_txt;
     private QBRequestGetBuilder requestBuilder;
     private QBPrivateChatManager chatManager;
@@ -67,60 +62,34 @@ public class AllContactListFragment extends Fragment implements INetworkListener
     ArrayList<Integer> userIds = new ArrayList<>();
     QBMessageListener privateChatQBMessageListener;
     QBRoster roster;
-    public static final String TAG  = AllContactListFragment.class.getSimpleName();
-    private BroadcastReceiver networkReceiver = getReceiver() ;
+    public static final String TAG = SearchNewUserActivity.class.getSimpleName();
+    private BroadcastReceiver networkReceiver = getReceiver();
     private boolean internetAvailable = false;
     private String ExtraMSG;
+    private boolean isUserLogin;
+
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        this.activity = (ContactListActivity) activity;
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_contects, null);
-        this.ExtraMSG = activity.ExtraMSG;
-        contactList = (ListView) v.findViewById(R.id.contact_list);
-        center_loader = (ProgressBar) v.findViewById(R.id.center_loader);
-        err_txt = (TextView) v.findViewById(R.id.error_txt);
-        contactList.setVisibility(View.GONE);
-        center_loader.setVisibility(View.VISIBLE);
-
-        chatManager = QBChatService.getInstance().getPrivateChatManager();
-        privateChatQBMessageListener = new QBMessageListener<QBPrivateChat>() {
+    public BroadcastReceiver getReceiver() {
+        BroadcastReceiver networkChangeReceiver = new BroadcastReceiver() {
             @Override
-            public void processMessage(QBPrivateChat qbPrivateChat, final QBChatMessage qbChatMessage) {
-                System.out.println("_______ The message is : " + qbChatMessage);
-            }
-
-            @Override
-            public void processError(QBPrivateChat qbPrivateChat, QBChatException e, QBChatMessage qbChatMessage) {
-
+            public void onReceive(Context context, Intent intent) {
+                int networkStatus = NetworkUtils.getConnectionStatus(context);
+                if (networkStatus == NetworkUtils.NOT_CONNECTED) {
+                    internetAvailable = false;
+                    onInternetDisconnected();
+                } else if (networkStatus == NetworkUtils.MOBILE) {
+                    internetAvailable = true;
+                    onInternetConnected();
+                } else if (networkStatus == NetworkUtils.WIFI) {
+                    internetAvailable = true;
+                    onInternetConnected();
+                }
             }
         };
-        requestBuilder = new QBRequestGetBuilder();
-        pagedRequestBuilder = new QBPagedRequestBuilder();
-        pagedRequestBuilder.setPage(1);
-        pagedRequestBuilder.setPerPage(50);
-
-        QBSubscriptionListener subscriptionListener = new QBSubscriptionListener() {
-            @Override
-            public void subscriptionRequested(int i) {
-
-            }
-        };
-        roster = QBChatService.getInstance().getRoster(QBRoster.SubscriptionMode.mutual, subscriptionListener);
-        if(roster!=null){
-            setAllFriendList();
-        }else{
-            Log.d(TAG, "onCreateView: THe user is currently not logged in..........");
-        }
-        registerReceiver();
-        return v;
+        return networkChangeReceiver;
     }
-    private void setAllFriendList(){
+
+    private void setAllFriendList() {
         Iterator<QBRosterEntry> it = roster.getEntries().iterator();
         while (it.hasNext()) {
             QBRosterEntry entry = it.next();
@@ -136,19 +105,19 @@ public class AllContactListFragment extends Fragment implements INetworkListener
                         for (QBUser user :
                                 users) {
                             System.out.println("________________THE CURRENT USER ID IS : " + user.getId());
-                            if (!user.getLogin().equals(activity.currentUser.getLogin()) && !userIds.contains(user.getId())) {
+                            if (!user.getLogin().equals(currentUser.getLogin()) && !userIds.contains(user.getId())) {
                                 user_list.add(user);
                             }
                         }
                         contactList.setVisibility(View.VISIBLE);
                         center_loader.setVisibility(View.GONE);
-                        adapter = new AllContactListAdapter(activity, R.layout.fragment_contects, user_list);
+                        adapter = new AllContactListAdapter(SearchNewUserActivity.this, R.layout.fragment_contects, user_list);
                         contactList.setAdapter(adapter);
 
                         contactList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                                final Dialog sendMessageDialog = new Dialog(activity);
+                                final Dialog sendMessageDialog = new Dialog(SearchNewUserActivity.this);
                                 sendMessageDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                 sendMessageDialog.setContentView(R.layout.dialog_send_request);
                                 Button send = (Button) sendMessageDialog.findViewById(R.id.sendMessageBtn);
@@ -200,6 +169,7 @@ public class AllContactListFragment extends Fragment implements INetworkListener
             }
         });
     }
+
     private void sendMessage(String message, Integer selectedUserId) {
         try {
             QBChatMessage chatMessage = new QBChatMessage();
@@ -208,7 +178,7 @@ public class AllContactListFragment extends Fragment implements INetworkListener
             } else {
                 chatMessage.setBody(message);
             }
-            chatMessage.setSenderId(activity.currentUser.getId());
+            chatMessage.setSenderId(currentUser.getId());
             chatMessage.setProperty("save_to_history", "1");
             chatMessage.setProperty(Helper.requestMessage, "true");
             QBPrivateChat privateChat = chatManager.getChat(selectedUserId);
@@ -233,34 +203,14 @@ public class AllContactListFragment extends Fragment implements INetworkListener
     }
 
     @Override
-    public BroadcastReceiver getReceiver() {
-        BroadcastReceiver networkChangeReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                int networkStatus = NetworkUtils.getConnectionStatus(context);
-                if(networkStatus == NetworkUtils.NOT_CONNECTED){
-                    internetAvailable = false;
-                    onInternetDisconnected();
-                } else if(networkStatus == NetworkUtils.MOBILE){
-                    internetAvailable = true;
-                    onInternetConnected();
-                } else if(networkStatus == NetworkUtils.WIFI){
-                    internetAvailable = true;
-                    onInternetConnected();
-                }
-            }
-        };
-        return networkChangeReceiver;
-    }
-
-    @Override
     public void registerReceiver() {
-        activity.registerReceiver(networkReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        registerReceiver(networkReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+
     }
 
     @Override
     public void unregisterReceiver() {
-        activity.unregisterReceiver(networkReceiver);
+        unregisterReceiver(networkReceiver);
     }
 
     @Override
@@ -273,8 +223,70 @@ public class AllContactListFragment extends Fragment implements INetworkListener
 
     }
     @Override
-      public void onDestroy() {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_search_new_user);
+        currentUser = (QBUser) getIntent().getSerializableExtra("CurrentUser");
+        ExtraMSG = getIntent().getExtras().getString("ExtraMSG");
+        if (ExtraMSG != null && ExtraMSG.equals("error")) {
+            Toast.makeText(SearchNewUserActivity.this, "cant login", Toast.LENGTH_SHORT).show();
+            isUserLogin = false;
+        } else {
+            Toast.makeText(SearchNewUserActivity.this, "login succesfull", Toast.LENGTH_SHORT).show();
+            isUserLogin = false;
+        }
+        contactList = (ListView) findViewById(R.id.contact_list);
+        center_loader = (ProgressBar) findViewById(R.id.center_loader);
+        err_txt = (TextView) findViewById(R.id.error_txt);
+        contactList.setVisibility(View.GONE);
+        center_loader.setVisibility(View.VISIBLE);
+
+        chatManager = QBChatService.getInstance().getPrivateChatManager();
+        privateChatQBMessageListener = new QBMessageListener<QBPrivateChat>() {
+            @Override
+            public void processMessage(QBPrivateChat qbPrivateChat, final QBChatMessage qbChatMessage) {
+                System.out.println("_______ The message is : " + qbChatMessage);
+            }
+
+            @Override
+            public void processError(QBPrivateChat qbPrivateChat, QBChatException e, QBChatMessage qbChatMessage) {
+
+            }
+        };
+        requestBuilder = new QBRequestGetBuilder();
+        pagedRequestBuilder = new QBPagedRequestBuilder();
+        pagedRequestBuilder.setPage(1);
+        pagedRequestBuilder.setPerPage(50);
+
+        QBSubscriptionListener subscriptionListener = new QBSubscriptionListener() {
+            @Override
+            public void subscriptionRequested(int i) {
+
+            }
+        };
+        roster = QBChatService.getInstance().getRoster(QBRoster.SubscriptionMode.mutual, subscriptionListener);
+        if (roster != null) {
+            setAllFriendList();
+        } else {
+            Log.d(TAG, "onCreateView: THe user is currently not logged in..........");
+        }
+        registerReceiver();
+    }
+
+    @Override
+    Activity getActivity() {
+        return SearchNewUserActivity.this;
+    }
+
+    @Override
+    QBUser currentUser() {
+        return currentUser;
+    }
+
+    @Override
+    public void onDestroy() {
         super.onDestroy();
         unregisterReceiver();
     }
+
 }

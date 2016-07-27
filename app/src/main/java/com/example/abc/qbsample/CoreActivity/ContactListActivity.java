@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
@@ -55,8 +54,11 @@ public class ContactListActivity extends BaseActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.search_user:
-                FragmentTransaction ft = fm.beginTransaction();
-                //ft.add();
+                Log.d(TAG, "onClick: ________ AllContactListFragment : ");
+                Intent it = new Intent(ContactListActivity.this,SearchNewUserActivity.class);
+                it.putExtra("CurrentUser", currentUser);
+                it.putExtra("ExtraMSG", ExtraMSG);
+                startActivity(it);
                 break;
         }
     }
