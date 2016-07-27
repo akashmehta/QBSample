@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <include
+        layout="@layout/layout_caller_image"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time_out"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/dp30"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dp16"
+        android:id="@+id/time_text"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGroup"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/dp30"
+        android:background="@color/colorPrimary"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_chat"
+            android:src="@drawable/chat"
+            android:layout_toLeftOf="@+id/video_call"
+            android:layout_marginRight="@dimen/dp10"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/video_call"
+            android:layout_toLeftOf="@+id/end_call"
+            android:src="@drawable/video"
+            android:layout_marginRight="@dimen/dp10"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_end_call"
+            android:src="@drawable/call_end"
+            android:layout_centerInParent="true"
+            android:id="@+id/end_call"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/end_call"
+            android:src="@drawable/voice"
+            android:layout_marginLeft="@dimen/dp10"
+            android:id="@+id/audio_call"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/audio_call"
+            android:src="@drawable/speaker_loud"
+            android:layout_marginLeft="@dimen/dp10"
+            android:id="@+id/speaker"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+            <item>
+                <bitmap
+                    android:gravity="bottom|right|left"
+                    android:src="@drawable/dropdown"
+                    android:filter="true"
+                    />
+            </item>
+            <item>
+                <bitmap
+                    android:gravity="left"
+                    android:src="@drawable/birthdate"
+                    android:filter="true"
+                    />
+            </item>
+
+        </layer-list>
+    </item>
+
+</selector>

@@ -1,0 +1,173 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:foo="http://schemas.android.com/apk/res/com.example.abc.qbsample"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context="com.quickblox.sample.groupchatwebrtc.activities.CallActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp150"
+                android:layout_height="@dimen/dp150"
+                android:background="@drawable/profile_img_shape"
+                android:layout_marginTop="@dimen/dp60"
+                android:layout_marginBottom="@dimen/dp55"
+                android:layout_gravity="center"
+                >
+                <com.example.abc.qbsample.Utils.Profile_ImageView
+                    android:id="@+id/profile_Img"
+                    android:layout_width="@dimen/dp150"
+                    android:layout_height="@dimen/dp150"
+                    android:paddingTop="@dimen/dp50"
+                    android:paddingRight="@dimen/dp45"
+                    android:paddingLeft="@dimen/dp55"
+                    android:paddingBottom="@dimen/dp50"
+                    android:scaleType="centerCrop"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/adduser" />
+
+            </RelativeLayout>
+
+            <com.example.abc.qbsample.Utils.MyEditText
+                android:id="@+id/username"
+                style="@style/sign_up_Edittext"
+                android:layout_marginTop="0dp"
+                android:drawableLeft="@drawable/user"
+                android:hint="@string/Username"
+                foo:editTextCustomFont="SourceSansPro-Regular.ttf"
+                />
+            <View
+                android:id="@+id/username_ul"
+                style="@style/SignUpEdittextUnderline"/>
+            <TextView
+                android:id="@+id/username_err"
+                style="@style/SignUpErrorText"
+                />
+            <Spinner
+                android:id="@+id/gender"
+                style="@style/bottomline"
+                android:background="@drawable/gender_left_drawable"
+                android:paddingLeft="@dimen/dp25"
+                />
+            <TextView
+                android:id="@+id/gender_err"
+                style="@style/SignUpErrorText"
+                />
+
+            <com.example.abc.qbsample.Utils.MyEditText
+                android:id="@+id/age"
+                style="@style/sign_up_Edittext"
+                android:drawableLeft="@drawable/user"
+                android:inputType="numberDecimal"
+                android:hint="@string/Age" />
+            <View
+                android:id="@+id/age_ul"
+                style="@style/SignUpEdittextUnderline"/>
+            <TextView
+                android:id="@+id/age_err"
+                style="@style/SignUpErrorText"
+                />
+
+            <com.example.abc.qbsample.Utils.MyEditText
+                android:id="@+id/birthDate"
+                style="@style/bottomline"
+                android:background="@drawable/birthdate_left_drawable"
+                android:paddingLeft="@dimen/dp35"
+                android:editable="false"
+                android:textSize="@dimen/dp14"
+                android:textColor="#777777"
+                android:text="@string/BirthDate" />
+            <TextView
+                android:id="@+id/birthdate_err"
+                style="@style/SignUpErrorText"
+                />
+
+            <Spinner
+                android:id="@+id/state"
+                style="@style/bottomline"
+                android:background="@drawable/city_left_drawable"
+                android:paddingLeft="@dimen/dp25" />
+            <TextView
+                android:id="@+id/state_err"
+                style="@style/SignUpErrorText"
+                />
+
+            <Spinner
+                android:id="@+id/city"
+                style="@style/bottomline"
+                android:layout_marginLeft="@dimen/dp60"
+                android:background="@drawable/spinner_bottom_line" />
+            <TextView
+                android:id="@+id/city_err"
+                style="@style/SignUpErrorText"
+                />
+
+            <Spinner
+                android:id="@+id/country"
+                style="@style/bottomline"
+                android:drawablePadding="0dp"
+                android:padding="0dp"
+                android:layout_marginLeft="@dimen/dp60"
+                android:background="@drawable/spinner_bottom_line1" />
+            <TextView
+                android:id="@+id/country_err"
+                style="@style/SignUpErrorText"
+                />
+
+            <com.example.abc.qbsample.Utils.MyEditText
+                android:id="@+id/password"
+                style="@style/sign_up_Edittext"
+                android:drawableLeft="@drawable/pass"
+                android:inputType="textPassword"
+                android:hint="@string/Password" />
+            <View
+                android:id="@+id/password_ul"
+                style="@style/SignUpEdittextUnderline"/>
+            <TextView
+                android:id="@+id/password_err"
+                style="@style/SignUpErrorText"
+                />
+
+            <com.example.abc.qbsample.Utils.MyEditText
+                android:id="@+id/confirm_password"
+                style="@style/sign_up_Edittext"
+                android:drawableLeft="@drawable/pass"
+                android:inputType="textPassword"
+                android:hint="@string/ConfirmPassword" />
+            <View
+                android:id="@+id/confirm_password_ul"
+                style="@style/SignUpEdittextUnderline"/>
+            <TextView
+                android:id="@+id/confirm_password_err"
+                style="@style/SignUpErrorText"
+                />
+
+            <com.example.abc.qbsample.Utils.MyButton
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_round_corner_fill"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:textSize="@dimen/dp14"
+                android:layout_marginLeft="@dimen/dp35"
+                android:layout_marginRight="@dimen/dp35"
+                android:layout_marginBottom="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp30"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/done" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

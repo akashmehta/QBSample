@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.abc.qbsample.CoreActivity.ContactListActivity"
+    tools:showIn="@layout/activity_contact_list">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/slidingTabLayout"
+        android:padding="@dimen/dp1"
+        android:background="@color/colorPrimary"
+
+        >
+        <com.astuetz.PagerSlidingTabStrip
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp50"
+            android:id="@+id/slidingTab"
+            android:layout_centerHorizontal="true"
+            />
+
+    </RelativeLayout>
+        <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/contact_pager"
+        android:layout_below="@+id/slidingTabLayout"
+
+        />
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="KerningViews">
+        <attr name="kv_spacing" format="float" />
+        <attr name="bold_str_diff" format="integer"/>
+        <attr name="end_bold_index" format="integer"/>
+    </declare-styleable>
+</resources>

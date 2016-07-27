@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "1067088977023",
+    "project_id": "qbsample-1304"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067088977023:android:6327728ada120a8b",
+        "android_client_info": {
+          "package_name": "com.example.abc.qbsample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDadLnO8GLeWNpVF4uc5fmqS14fJtDL9hQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

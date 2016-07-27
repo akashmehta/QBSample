@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?attr/actionBarSize"
+    android:background="@color/colorPrimary"
+    android:title="Hello"
+    local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    local:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+
+<!--
+    <RelativeLayout
+        android:layout_width="@dimen/dp50"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_gravity="right"
+        >
+        <com.example.abc.qbsample.Utils.UserIconImage
+            android:layout_width="@dimen/dp40"
+            android:layout_height="@dimen/dp40"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/user_icon_shape"
+            android:backgroundTint="#000000"
+            android:id="@+id/userImage"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:text="AB"
+            android:textSize="@dimen/dp18"
+            android:id="@+id/midTitle"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/dp10"
+            />
+        <ImageView
+            android:layout_width="@dimen/dp10"
+            android:layout_height="@dimen/dp10"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp3"
+            android:background="@drawable/status_bubble"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:id="@+id/UserStatus"
+            />
+    </RelativeLayout>
+-->
+
+</android.support.v7.widget.Toolbar>
+    <!--android:background="?attr/colorPrimary"-->

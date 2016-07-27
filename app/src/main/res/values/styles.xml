@@ -1,0 +1,91 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+    <style name="AppTheme1" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+
+    <style name="MyEdittext">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginBottom">@dimen/dp10</item>
+        <item name="android:drawablePadding">@dimen/dp20</item>
+        <item name="android:textSize">@dimen/dp14</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:maxLines">1</item>
+    </style>
+    <style name="CustomDialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="sign_up_Edittext">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/dp10</item>
+        <item name="android:layout_marginBottom">@dimen/dp10</item>
+        <item name="android:drawablePadding">@dimen/dp20</item>
+        <item name="android:textSize">@dimen/dp14</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_marginLeft">@dimen/dp35</item>
+    </style>
+
+    <style name="MyEdittextUnderline">
+        <item name="android:layout_height">@dimen/dp1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginBottom">@dimen/dp5</item>
+        <item name="android:background">@color/text_color</item>
+    </style>
+
+    <style name="SignUpEdittextUnderline">
+        <item name="android:layout_height">@dimen/dp1</item>
+        <item name="android:layout_width">match_parent</item>
+        <!--<item name="android:layout_marginBottom">@dimen/dp5</item>-->
+        <item name="android:background">@color/text_color</item>
+        <item name="android:layout_marginRight">@dimen/dp35</item>
+        <item name="android:layout_marginLeft">@dimen/dp35</item>
+    </style>
+
+    <style name="bottomline">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp40</item>
+        <item name="android:layout_marginLeft">@dimen/default_margin</item>
+        <item name="android:layout_marginRight">@dimen/default_margin</item>
+    </style>
+
+    <style name="SignUpErrorText">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">@dimen/dp10</item>
+        <item name="android:layout_marginLeft">@dimen/dp35</item>
+        <!--<item name="android:text">sample text</item>-->
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="SignInErrorText">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">@dimen/dp10</item>
+        <item name="android:text">sample text</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.skyfishjy.library.RippleBackground
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/user_image"
+    android:layout_above="@+id/btnGroup"
+    android:background="@drawable/bg"
+    app:rb_color="@color/colorPrimary"
+    app:rb_radius="@dimen/dp30"
+    app:rb_rippleAmount="6"
+    app:rb_duration="3000"
+    app:rb_scale="5"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/profile_Img_layout"
+        android:layout_marginBottom="@dimen/dp40"
+        android:text="User Name"
+        android:textSize="@dimen/dp20"
+        android:textColor="@android:color/black"
+        android:id="@+id/username"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp150"
+        android:layout_height="@dimen/dp150"
+        android:background="@drawable/shape_caller_image"
+        android:padding="@dimen/dp3"
+        android:id="@+id/profile_Img_layout"
+        android:layout_centerInParent="true"
+
+        >
+        <com.example.abc.qbsample.Utils.Profile_ImageView
+            android:layout_width="@dimen/dp150"
+            android:layout_height="@dimen/dp150"
+            android:layout_centerInParent="true"
+            android:scaleType="centerCrop"
+            android:id="@+id/callerImage"
+            />
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:id="@+id/callerImage_loader"
+            />
+    </RelativeLayout>
+
+</com.skyfishjy.library.RippleBackground>

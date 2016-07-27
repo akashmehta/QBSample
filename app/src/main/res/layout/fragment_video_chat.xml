@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CoreActivity.CallActivity">
+    <com.quickblox.videochat.webrtc.view.RTCGLVideoView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/localView"
+        android:layout_width="@dimen/dp100"
+        android:layout_height="@dimen/dp100"
+        android:layout_alignBottom="@+id/remoteView"
+        />
+
+    <com.quickblox.videochat.webrtc.view.RTCGLVideoView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/remoteView"
+        android:layout_above="@+id/btnGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp10"
+        android:background="@android:color/black"
+        android:id="@+id/video_chat_title_layout"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="call from"
+            android:textSize="@dimen/dp16"
+            android:id="@+id/opponentName"
+            />
+        <ImageView
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp30"
+            android:id="@+id/camera"
+            android:src="@drawable/ic_camera_front"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/dp10"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGroup"
+        android:padding="@dimen/dp10"
+        android:layout_alignParentBottom="true"
+        >
+        <ImageView
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp30"
+            android:id="@+id/mice"
+            android:src="@drawable/ic_mic"
+            />
+        <ImageView
+            android:layout_width="@dimen/dp30"
+            android:layout_height="@dimen/dp30"
+            android:id="@+id/audio_chat"
+            android:src="@drawable/ic_mic_none_24dp"
+            android:layout_toRightOf="@+id/mice"
+            android:layout_marginLeft="@dimen/dp10"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

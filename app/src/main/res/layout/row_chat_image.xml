@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chatMessageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp5"
+    android:orientation="horizontal"
+    >
+    <RelativeLayout
+        android:layout_width="@dimen/dp60"
+        android:layout_height="@dimen/dp60"
+        android:id="@+id/user_image_layout"
+        >
+        <com.example.abc.qbsample.Utils.UserIconImage
+            android:layout_width="@dimen/dp60"
+            android:layout_height="@dimen/dp60"
+            android:background="@drawable/user_icon_shape"
+            android:backgroundTint="#cddc39"
+            android:id="@+id/user_image"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/dp5"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:text="AB"
+            android:textSize="@dimen/dp18"
+            android:id="@+id/midTitle"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/llMessage"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/messageBg"
+            android:background="@drawable/right_box"
+            >
+            <ImageView
+                android:id="@+id/chatImageMessage"
+                android:layout_width="@dimen/dp150"
+                android:layout_height="@dimen/dp150"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/dp12"
+                android:layout_marginRight="@dimen/dp12"
+                android:background="@android:color/white"
+                android:scaleType="centerCrop"
+                />
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageLoader"
+                android:visibility="gone"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chatBoxTime"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/dp14"
+            android:text="Time" />
+    </LinearLayout>
+
+
+</LinearLayout>

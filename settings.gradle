@@ -1,0 +1,1 @@
+include ':app', ':library', ':stickyview', ':caller_anim_library', ':kerningview', ':emoji_library', ':fab_library'

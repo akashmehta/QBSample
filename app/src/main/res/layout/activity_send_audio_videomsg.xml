@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.abc.qbsample.ShareFile.SendAudioVideomsg">
+    <ImageView
+        android:layout_width="@dimen/dp50"
+        android:layout_height="@dimen/dp50"
+        android:id="@+id/audio_rec"
+        android:src="@drawable/ic_mic"
+        android:layout_centerInParent="true"
+        />
+    <ProgressBar
+        android:layout_width="@dimen/dp100"
+        android:layout_height="@dimen/dp100"
+        android:id="@+id/audio_chat_loader"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
+    <ProgressBar
+        android:id="@+id/uploadprogressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:layout_marginBottom="@dimen/dp35"
+        android:visibility="gone"
+        android:layout_above="@+id/rec_btnGroup"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rec_btnGroup"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/play_file"
+            android:text="play"
+            android:layout_margin="@dimen/dp10"
+            android:visibility="gone"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="stop"
+            android:id="@+id/stop_file"
+            android:layout_margin="@dimen/dp10"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
+

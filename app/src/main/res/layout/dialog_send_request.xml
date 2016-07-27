@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="@dimen/dp200"
+    android:padding="@dimen/dp20"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send friend request to user"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/dp18"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/dp10"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hi there! Please accept my request."
+        android:id="@+id/dialog_message"
+        android:gravity="center"
+        />
+    <Button
+        android:layout_width="@dimen/dp100"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_round_corner"
+        android:text="send"
+        android:id="@+id/sendMessageBtn"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp10"
+        />
+</LinearLayout>
