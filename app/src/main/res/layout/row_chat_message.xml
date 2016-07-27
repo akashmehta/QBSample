@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:textColor="#FFF"
             android:text="AB"
-            android:textSize="@dimen/dp18"
+            android:textSize="@dimen/sp18"
             android:id="@+id/midTitle"
             android:layout_centerInParent="true"
             />
@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/messageBg"
             android:background="@drawable/right_box"
+            android:gravity="center"
             >
             <com.rockerhieu.emojicon.EmojiconTextView
                 android:id="@+id/chatTextMessage"
@@ -50,9 +51,7 @@
                 android:text="My name isn't Khan and I'm Terrorist"
                 android:layout_centerInParent="true"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/dp16"
-                android:layout_marginLeft="@dimen/dp12"
-                android:layout_marginRight="@dimen/dp12"
+                android:textSize="@dimen/sp16"
                 />
         </RelativeLayout>
 
@@ -62,7 +61,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/chatBoxTime"
             android:textColor="@color/text_color"
-            android:textSize="@dimen/dp14"
+            android:textSize="@dimen/sp14"
             android:text="Time" />
     </LinearLayout>
 

@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
+        android:theme="@style/AppTheme.AppBarOverlay"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <ListView
@@ -31,7 +32,7 @@
         android:id="@+id/error_txt"
         android:text="Server Error"
         android:textColor="@android:color/black"
-        android:textSize="@dimen/dp14"
+        android:textSize="@dimen/sp14"
         android:layout_centerInParent="true"
         android:visibility="gone" />
 </RelativeLayout>

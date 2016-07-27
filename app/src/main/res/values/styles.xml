@@ -17,7 +17,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginBottom">@dimen/dp10</item>
         <item name="android:drawablePadding">@dimen/dp20</item>
-        <item name="android:textSize">@dimen/dp14</item>
+        <item name="android:textSize">@dimen/sp14</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:maxLines">1</item>
     </style>
@@ -31,7 +31,7 @@
         <item name="android:layout_marginTop">@dimen/dp10</item>
         <item name="android:layout_marginBottom">@dimen/dp10</item>
         <item name="android:drawablePadding">@dimen/dp20</item>
-        <item name="android:textSize">@dimen/dp14</item>
+        <item name="android:textSize">@dimen/sp14</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:maxLines">1</item>
         <item name="android:layout_marginLeft">@dimen/dp35</item>
@@ -64,7 +64,7 @@
         <item name="android:textColor">@color/red</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:textSize">@dimen/dp10</item>
+        <item name="android:textSize">@dimen/sp10</item>
         <item name="android:layout_marginLeft">@dimen/dp35</item>
         <!--<item name="android:text">sample text</item>-->
         <item name="android:visibility">gone</item>
@@ -74,7 +74,7 @@
         <item name="android:textColor">@color/red</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:textSize">@dimen/dp10</item>
+        <item name="android:textSize">@dimen/sp10</item>
         <item name="android:text">sample text</item>
         <item name="android:visibility">gone</item>
     </style>

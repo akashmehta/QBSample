@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -17,7 +18,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.abc.qbsample.Adapters.AllContactListAdapter;
 import com.example.abc.qbsample.Listeners.INetworkListener;
@@ -227,20 +227,21 @@ public class SearchNewUserActivity extends BaseActivity implements INetworkListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_new_user);
         currentUser = (QBUser) getIntent().getSerializableExtra("CurrentUser");
-        ExtraMSG = getIntent().getExtras().getString("ExtraMSG");
+        /*ExtraMSG = getIntent().getExtras().getString("ExtraMSG");
         if (ExtraMSG != null && ExtraMSG.equals("error")) {
             Toast.makeText(SearchNewUserActivity.this, "cant login", Toast.LENGTH_SHORT).show();
             isUserLogin = false;
         } else {
             Toast.makeText(SearchNewUserActivity.this, "login succesfull", Toast.LENGTH_SHORT).show();
             isUserLogin = false;
-        }
+        }*/
         contactList = (ListView) findViewById(R.id.contact_list);
         center_loader = (ProgressBar) findViewById(R.id.center_loader);
         err_txt = (TextView) findViewById(R.id.error_txt);
         contactList.setVisibility(View.GONE);
         center_loader.setVisibility(View.VISIBLE);
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         chatManager = QBChatService.getInstance().getPrivateChatManager();
         privateChatQBMessageListener = new QBMessageListener<QBPrivateChat>() {
             @Override

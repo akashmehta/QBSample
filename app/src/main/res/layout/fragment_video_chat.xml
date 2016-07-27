@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:text="call from"
-            android:textSize="@dimen/dp16"
+            android:textSize="@dimen/sp16"
             android:id="@+id/opponentName"
             />
         <ImageView

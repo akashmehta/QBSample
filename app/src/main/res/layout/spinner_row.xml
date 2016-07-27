@@ -10,7 +10,7 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/dp14"
+            android:textSize="@dimen/sp14"
             android:id="@+id/spinner_row_title"
             />
         <View

@@ -92,7 +92,10 @@
             android:label="@string/title_activity_contact_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".CoreActivity.SearchActivity" />
-        <activity android:name=".CoreActivity.SearchNewUserActivity"></activity>
+        <activity android:name=".CoreActivity.SearchNewUserActivity"
+            android:label="@string/title_activity_search_new_user"
+            android:theme="@style/AppTheme.NoActionBar"
+           />
     </application>
 
 </manifest>

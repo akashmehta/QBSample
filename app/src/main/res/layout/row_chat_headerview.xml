@@ -5,7 +5,7 @@
     android:gravity="center"
     android:text="headerTitle"
     android:textColor="@android:color/black"
-    android:textSize="@dimen/dp16"
+    android:textSize="@dimen/sp16"
     android:id="@+id/chat_header_title"
     android:background="@color/white"
     />

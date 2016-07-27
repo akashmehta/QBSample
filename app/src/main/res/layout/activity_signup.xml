@@ -84,7 +84,7 @@
                 android:background="@drawable/birthdate_left_drawable"
                 android:paddingLeft="@dimen/dp35"
                 android:editable="false"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/sp14"
                 android:textColor="#777777"
                 android:text="@string/BirthDate" />
             <TextView
@@ -159,7 +159,7 @@
                 android:background="@drawable/btn_round_corner_fill"
                 android:textColor="@android:color/white"
                 android:gravity="center"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/sp14"
                 android:layout_marginLeft="@dimen/dp35"
                 android:layout_marginRight="@dimen/dp35"
                 android:layout_marginBottom="@dimen/dp30"

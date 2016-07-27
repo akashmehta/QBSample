@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:textColor="#FFF"
             android:text="AB"
-            android:textSize="@dimen/dp18"
+            android:textSize="@dimen/sp18"
             android:id="@+id/midTitle"
             android:layout_centerInParent="true"
             />
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/username"
             android:text="@string/Username"
-            android:textSize="@dimen/dp16"
+            android:textSize="@dimen/sp16"
             android:layout_marginTop="@dimen/dp10"
             android:textColor="@android:color/black"
             />

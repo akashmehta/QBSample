@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:textColor="#FFF"
             android:text="AB"
-            android:textSize="@dimen/dp18"
+            android:textSize="@dimen/sp18"
             android:id="@+id/midTitle"
             android:layout_centerInParent="true"
             />
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/chatBoxTime"
             android:textColor="@color/text_color"
-            android:textSize="@dimen/dp14"
+            android:textSize="@dimen/sp14"
             android:text="Time" />
     </LinearLayout>
 

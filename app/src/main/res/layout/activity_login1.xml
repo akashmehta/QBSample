@@ -33,6 +33,7 @@
                 android:layout_height="@dimen/dp1"
                 android:id="@+id/divider"
                 android:layout_below="@+id/image_bg"
+                android:orientation="vertical"
                 />
             <com.example.abc.qbsample.Utils.MyEditText
                 style="@style/MyEdittext"
@@ -80,7 +81,7 @@
                 android:id="@+id/forgot_password"
                 android:text="Forgot Password?"
                 android:textColor="#9c9c9c"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/sp14"
                 android:layout_below="@+id/password_err"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="@dimen/dp10"
@@ -92,7 +93,7 @@
                 android:layout_below="@+id/forgot_password"
                 android:id="@+id/login"
                 android:text="Sign In"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/sp14"
                 android:layout_marginTop="@dimen/dp20"
                 android:textColor="@color/white"
                 android:layout_centerHorizontal="true"
@@ -134,7 +135,7 @@
                 android:paddingRight="@dimen/dp10"
                 android:text="OR LOGIN WITH "
                 android:textColor="@color/text_color"
-                android:textSize="@dimen/dp12"
+                android:textSize="@dimen/sp12"
                 android:layout_below="@+id/rememberUserLayout"
                 android:layout_marginTop="@dimen/dp18"
                 android:background="@android:color/white"
@@ -161,7 +162,7 @@
                     android:background="@drawable/btn_round_corner"
                     android:text="FACEBOOK"
                     android:id="@+id/loginFB"
-                    android:textSize="@dimen/dp12"
+                    android:textSize="@dimen/sp12"
                     android:textColor="@color/colorPrimary"
                     android:layout_toLeftOf="@+id/center_divider"
                     />
@@ -171,7 +172,7 @@
                     android:background="@drawable/btn_round_corner"
                     android:text="INSTAGRAM"
                     android:id="@+id/loginInsta"
-                    android:textSize="@dimen/dp12"
+                    android:textSize="@dimen/sp12"
                     android:textColor="@color/colorPrimary"
                     android:layout_toRightOf="@+id/center_divider"
                     />
@@ -191,7 +192,7 @@
                     android:text="DON'T HAVE AN ACCOUNT?"
                     android:textColor="@color/text_color"
                     android:id="@+id/sign_up_txt"
-                    android:textSize="@dimen/dp14"
+                    android:textSize="@dimen/sp14"
                     foo:textViewCustomFont="SourceSansPro-Regular.ttf"
                     />
             </RelativeLayout>

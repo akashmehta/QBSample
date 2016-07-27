@@ -29,7 +29,7 @@
             android:layout_centerHorizontal="true"
             android:text="Friend Request Text"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/dp18" />
+            android:textSize="@dimen/sp18" />
 
         <Button
             android:id="@+id/accept_req"

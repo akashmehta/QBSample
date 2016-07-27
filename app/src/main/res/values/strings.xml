@@ -136,4 +136,5 @@
     <string name="city_not_selected">City is not selected</string>
     <string name="country_not_selected">Country is not selected</string>
     <string name="title_activity_contact_list">ContactListActivity</string>
+    <string name="title_activity_search_new_user">SearchNewUserActivity</string>
 </resources>
